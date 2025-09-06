@@ -1,0 +1,78 @@
+---
+title: ""
+format:
+  pdf:
+    pdf-engine: pdflatex
+    documentclass: article
+    geometry:
+      - left=1cm
+      - right=1cm
+      - top=1cm
+      - bottom=1cm
+header-includes:
+  - \usepackage{tikz}
+  - \usepackage{xcolor}
+  - \definecolor{banner}{HTML}{003A65}
+  - \definecolor{accenttwo}{HTML}{D70929}
+  - \usepackage{array}
+  - \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+  - \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+  - \newcommand{\onedate}[1]{\mbox{#1}}
+---
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north west, fill=banner, text=white, inner sep=10pt,
+        minimum width=\paperwidth, minimum height=2.8cm] at (current page.north west)
+        {\parbox{\paperwidth}{\centering
+           \Huge Andrew Kingston {\Large\itshape BSc(Hons) MSc PhD CStat SFHEA}\\[0.4em]
+           \large SENIOR LECTURER $\cdot$ CHARTERED STATISTICIAN $\cdot$ EPIDEMIOLOGIST}};
+\end{tikzpicture}
+
+\vspace*{1.0cm} 
+
+# \textcolor{banner}{Profile}
+
+\textcolor{accenttwo}{\textbf{RESEARCH:}} Statistical epidemiologist focused on ageing, multimorbidity, and health inequalities. I develop and apply advanced longitudinal and Bayesian methods and lead PACSim, a microsimulation engine projecting population morbidity, function, and mortality to inform national policy and service planning.
+
+\textcolor{accenttwo}{\textbf{EDUCATION:}} Director of Newcastle’s Master of Public Health, where I drive curriculum design that is research-led and data-driven. I embed quantitative and simulation methods into teaching to equip graduates with the skills to address contemporary public health challenges.
+
+---
+
+# \textcolor{banner}{Career Appointments}
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{@{}L{.30\textwidth} L{.52\textwidth} R{.18\textwidth}@{}}
+\textbf{Newcastle University} & \textcolor{accenttwo}{Senior Lecturer in the Epidemiology of Ageing} & \onedate{Jan 2019--Present} \\
+\textbf{Newcastle University} & \textcolor{accenttwo}{Newcastle University Research Fellow}          & \onedate{Feb 2018--Dec 2019} \\
+\textbf{NIHR School for Primary Care Research (SPCR)} & \textcolor{accenttwo}{Research Fellow}     & \onedate{Feb 2017--Jan 2018} \\
+\textbf{Newcastle University} & \textcolor{accenttwo}{Research Associate in Medical Statistics}       & \onedate{Sept 2008--Jan 2017} \\
+\end{tabular}
+
+\vspace{1em}
+
+---
+
+# \textcolor{banner}{Education}
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{@{}L{.30\textwidth} L{.52\textwidth} R{.18\textwidth}@{}}
+\textbf{Newcastle University}   & \textcolor{accenttwo}{PhD Epidemiology/Statistics}  & \onedate{July 2016 (part-time)} \\
+\textbf{University of Leicester}& \textcolor{accenttwo}{MSc in Medical Statistics}    & \onedate{Sept 2008} \\
+\textbf{Northumbria University} & \textcolor{accenttwo}{BSc Honours in Mathematics}   & \onedate{June 2005} \\
+\end{tabular}
+
+\vspace{1em}
+
+---
+
+# \textcolor{banner}{Grants \& Funding}
+
+# \textcolor{banner}{Grants \& Funding}
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{@{}L{.20\textwidth} L{.35\textwidth} L{.12\textwidth} R{.13\textwidth} R{.15\textwidth}@{}}
+\textbf{NIHR}           & \textcolor{accenttwo}{Healthy Ageing Policy Research Unit} & Co-applicant & £5.5M     & \onedate{2024--2029} \\
+\textbf{NIHR}           & \textcolor{accenttwo}{Extending Working Lives for People with Musculoskeletal Conditions} & Co-applicant & £749,437  & \onedate{2023--2026} \\
+\textbf{Wellcome Trust} & \textcolor{accenttwo}{North and South: Regional Health Inequalities in England} & Co-applicant & £913,683  & \onedate{2021--2026} \\
+\textbf{Legal \& General} & \textcolor{accenttwo}{Advanced Care Research Centre (The Person in Context)} & Co-applicant & £1.3M     & \onedate{2020--2025} \\
+\end{tabular}
