@@ -28,7 +28,7 @@ header-includes:
            \large SENIOR LECTURER $\cdot$ CHARTERED STATISTICIAN $\cdot$ EPIDEMIOLOGIST}};
 \end{tikzpicture}
 
-\vspace*{1.0cm} 
+\vspace\*{1.0cm}
 
 # \textcolor{banner}{Profile}
 
@@ -36,7 +36,7 @@ header-includes:
 
 \textcolor{accenttwo}{\textbf{EDUCATION:}} Director of Newcastle’s Master of Public Health, where I drive curriculum design that is research-led and data-driven. I embed quantitative and simulation methods into teaching to equip graduates with the skills to address contemporary public health challenges.
 
----
+------------------------------------------------------------------------
 
 # \textcolor{banner}{Career Appointments}
 
@@ -50,7 +50,7 @@ header-includes:
 
 \vspace{1em}
 
----
+------------------------------------------------------------------------
 
 # \textcolor{banner}{Education}
 
@@ -63,9 +63,7 @@ header-includes:
 
 \vspace{1em}
 
----
-
-# \textcolor{banner}{Grants \& Funding}
+------------------------------------------------------------------------
 
 # \textcolor{banner}{Grants \& Funding}
 
@@ -76,3 +74,6 @@ header-includes:
 \textbf{Wellcome Trust} & \textcolor{accenttwo}{North and South: Regional Health Inequalities in England} & Co-applicant & £913,683  & \onedate{2021--2026} \\
 \textbf{Legal \& General} & \textcolor{accenttwo}{Advanced Care Research Centre (The Person in Context)} & Co-applicant & £1.3M     & \onedate{2020--2025} \\
 \end{tabular}
+
+# \textcolor{banner}{References}
+

@@ -1,0 +1,137 @@
+---
+title: ""
+format:
+  pdf:
+    pdf-engine: lualatex
+    documentclass: article
+    geometry: [left=4.6cm, right=1.2cm, top=1.2cm, bottom=1.4cm]  # left reserved for sidebar
+bibliography: references.bib
+nocite: "@*"
+header-includes:
+  - |
+    % ===== fonts & core (TinyTeX-safe) =====
+    \usepackage{fontspec}
+    \setmainfont{TeX Gyre Heros}[Scale=1.0,Ligatures=TeX]
+    \setsansfont{TeX Gyre Heros}
+    \usepackage{tikz}
+    \usetikzlibrary{shapes,arrows}
+    \usepackage{xcolor}
+    \usepackage{array}
+    \usepackage{tabularx}
+    \usepackage{titlesec}
+    \usepackage{hyperref}
+
+    % ===== Andrew palette =====
+    \definecolor{andrewgreen}{HTML}{009E4F}   % anchor
+    \definecolor{fireaccent}{HTML}{FF3A20}    % pop accent (sparingly)
+    \definecolor{signalyellow}{HTML}{FFC300}  % highlights
+    \definecolor{darkbase}{HTML}{1A1A1A}      % body text / sidebar
+    \definecolor{lightbg}{HTML}{F2F2F2}       % soft background
+
+    % ===== global text =====
+    \color{darkbase}
+    \hypersetup{colorlinks=true, linkcolor=andrewgreen, urlcolor=andrewgreen, citecolor=andrewgreen}
+
+    % ===== layout helpers =====
+    \newlength{\leftbarwidth}
+    \setlength{\leftbarwidth}{3.8cm}
+    \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+    \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+    \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+    \newcommand{\onedate}[1]{\mbox{#1}}
+
+    % ===== chips for money/dates =====
+    \newcommand{\money}[1]{\colorbox{darkbase}{\strut\textcolor{signalyellow}{\footnotesize\textsf{\hspace{0.45em}#1\hspace{0.45em}}}}}
+    \newcommand{\datechip}[1]{\colorbox{lightbg}{\strut\textcolor{darkbase}{\footnotesize\textsf{\hspace{0.45em}#1\hspace{0.45em}}}}}
+
+    % ===== headings =====
+    \titleformat{\section}{\Large\bfseries\color{andrewgreen}}{}{0pt}{}[
+      \vspace{-0.35em}\tikz{\draw[signalyellow,line width=2pt] (0,0)--(7,0);} \vspace{0.25em}
+    ]
+    \titleformat{\subsection}{\bfseries\color{andrewgreen}}{}{0pt}{}
+
+    % ===== tiny bullet for sidebar (no itemize env) =====
+    \newcommand{\sbbullet}{\tikz[baseline=-0.6ex]{\fill[signalyellow,draw=darkbase,line width=0.3pt] (0,0) circle (2pt);}}
+---
+
+% ====== Sidebar + Banner (TikZ overlay) ======
+\begin{tikzpicture}[remember picture,overlay]
+  % Dark sidebar band
+  \fill[darkbase] (current page.north west) rectangle ([xshift=\leftbarwidth]current page.south west);
+  % Light background buffer next to sidebar
+  \fill[lightbg] ([xshift=\leftbarwidth]current page.north west) rectangle ([xshift=\leftbarwidth+0.8cm]current page.south west);
+  % Andrew-green top banner
+  \node[anchor=north west, fill=andrewgreen, text=white, inner sep=12pt,
+        minimum width=\paperwidth, minimum height=2.8cm] at (current page.north west)
+        {\parbox{\paperwidth}{\centering
+           \Huge Andrew Kingston {\Large\itshape BSc(Hons) MSc PhD CStat SFHEA}\\[0.45em]
+           \large \textsf{SENIOR LECTURER \, · \, CHARTERED STATISTICIAN \, · \, EPIDEMIOLOGIST}}};
+  % Sidebar content block (NO itemize; plain lines with custom bullets)
+  \node[anchor=north west, text width=\leftbarwidth-0.8cm, align=left,
+        text=white, inner sep=0pt] at ([xshift=0.4cm,yshift=-3.2cm]current page.north west) {%
+        {\large\bfseries Profile}\par
+        \vspace{0.5em}
+        \normalsize
+        Data-driven epidemiology, ageing, multimorbidity, simulation.\par
+        \vspace{1.0em}
+        {\large\bfseries Contact}\par
+        \vspace{0.5em}
+        \footnotesize
+        \href{mailto:andrew.kingston@newcastle.ac.uk}{andrew.kingston@newcastle.ac.uk}\par
+        Newcastle University, UK\par
+        \vspace{1.0em}
+        {\large\bfseries Focus}\par
+        \vspace{0.3em}
+        \footnotesize
+        {\sbbullet}\ \, Bayesian longitudinal models\par
+        {\sbbullet}\ \, Multimorbidity metrics\par
+        {\sbbullet}\ \, Population microsimulation (PACSim)\par
+        {\sbbullet}\ \, Health inequalities\par
+  };
+\end{tikzpicture}
+
+% Space below banner
+\vspace*{1.2cm}
+
+\section{Career Appointments}
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{@{}L{.33\textwidth} L{.49\textwidth} R{.18\textwidth}@{}}
+\textbf{Newcastle University} & Senior Lecturer in the Epidemiology of Ageing & \onedate{Jan 2019--Present} \\
+\textbf{Newcastle University} & Newcastle University Research Fellow          & \onedate{Feb 2018--Dec 2019} \\
+\textbf{NIHR SPCR}            & Research Fellow                              & \onedate{Feb 2017--Jan 2018} \\
+\textbf{Newcastle University} & Research Associate in Medical Statistics      & \onedate{Sept 2008--Jan 2017} \\
+\end{tabular}
+
+\vspace{0.8em}
+
+\section{Education}
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{@{}L{.33\textwidth} L{.49\textwidth} R{.18\textwidth}@{}}
+\textbf{Newcastle University}   & PhD Epidemiology/Statistics  & \onedate{July 2016 (part-time)} \\
+\textbf{University of Leicester}& MSc in Medical Statistics    & \onedate{Sept 2008} \\
+\textbf{Northumbria University} & BSc Honours in Mathematics   & \onedate{June 2005} \\
+\end{tabular}
+
+\vspace{0.8em}
+
+\section{Grants \& Funding}
+
+\renewcommand{\arraystretch}{1.2}
+\noindent\begin{tabularx}{\textwidth}{@{}L{.18\textwidth} Y L{.16\textwidth} R{.14\textwidth} R{.12\textwidth}@{}}
+\textbf{Funder} & \textbf{Project} & \textbf{Role} & \textbf{Amount} & \textbf{Dates} \\
+\hline
+NIHR & Healthy Ageing Policy Research Unit & Co-applicant & \money{£5.5M} & \datechip{2024--2029} \\
+NIHR & Extending Working Lives for People with Musculoskeletal Conditions & Co-applicant & \money{£749,437} & \datechip{2023--2026} \\
+Wellcome Trust & North and South: Regional Health Inequalities in England & Co-applicant & \money{£913,683} & \datechip{2021--2026} \\
+Legal \& General & Advanced Care Research Centre (The Person in Context) & Co-applicant & \money{£1.3M} & \datechip{2020--2025} \\
+\end{tabularx}
+\renewcommand{\arraystretch}{1.0}
+
+\vspace{0.8em}
+
+\section{References}
+
+::: {#refs}
+:::
